@@ -1,9 +1,58 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
+import SubmitForm from './SubmitForm';
+import SuccessForm from './SuccessForm';
+import ErrorForm from './ErrorForm';
+
+
+
 
 const Main = () => {
+
+    const [img, setImg] = useState(null);
+    const [button, setButton] = useState(<div className="d-grid"><button className="btn btn-primary disabled btn-xl" id="submitButton" type="submit">테스트!</button></div>);
+    const [resultPage, setResultPage] = useState(null);
+
+
+
+    const handleChange = (e) => {
+        console.log("image detected.");
+        console.log(e.target.files[0]);
+
+        setImg(e.target.files[0]);
+        
+        if(typeof(e.target.files[0]) !== 'undefined'){
+            setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
+        }
+        else{
+            setButton(<div className="d-grid"><button className="btn btn-primary disabled btn-xl" id="submitButton" type="submit">테스트!</button></div>);
+        }
+
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('submitted');
+
+        const sendImg = img;
+        setResultPage(<SubmitForm></SubmitForm>)
+        setButton(<div className="d-grid"><button className="btn btn-primary disabled btn-xl" id="submitButton" type="submit">테스트!</button></div>);
+
+        axios.get('http://naver.com', sendImg).then(res=> {
+            setResultPage(<SuccessForm></SuccessForm>)
+        }).catch(err=> {
+            // 오류창 표시 후 제출 버튼 활성화
+            // setResultPage(<ErrorForm></ErrorForm>)
+            // setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
+            console.log(err);
+        })
+    }
+
+    
     return (
+
         <div>
-            <div>
+        <div>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div className="container px-4 px-lg-5">
                 <a className="navbar-brand" href="#page-top">CafeIn</a>
@@ -144,15 +193,17 @@ const Main = () => {
                 </div>
                 <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div className="col-lg-6">
-                        <form id="demoForm">
+                        <form id="demoForm" onSubmit={handleSubmit}>
     
                             <div className='container'>
-                              <input className="form-control form-control-lg form-floating" id="formFile" type="file" />
+                              <input className="form-control form-control-lg form-floating"  onChange={handleChange} id="formFile" type="file" />
                             </div>
                             <br/>
                             
+                            {button}
 
-                            <div className="d-grid"><button className="btn btn-primary btn-xl disabled" id="submitButton" type="submit">테스트!</button></div>
+                            {resultPage}
+                            
                         </form>
                     </div>
                 </div>
@@ -164,7 +215,7 @@ const Main = () => {
         </footer>
 
     </div>
-        </div>
+    </div>
     );
 }
 
