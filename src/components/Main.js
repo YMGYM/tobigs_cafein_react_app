@@ -38,12 +38,16 @@ const Main = () => {
         setResultPage(<SubmitForm></SubmitForm>)
         setButton(<div className="d-grid"><button className="btn btn-primary disabled btn-xl" id="submitButton" type="submit">테스트!</button></div>);
 
-        axios.get('http://naver.com', sendImg).then(res=> {
+        axios.get('https://tobigs-cafein-nmvx.run.goorm.io/main/status', sendImg).then(res=> {
+            // 성공시 제출 버튼 활성화 후 결과 표시
+            setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
             setResultPage(<SuccessForm></SuccessForm>)
+            console.log(res.data.status);
+
         }).catch(err=> {
             // 오류창 표시 후 제출 버튼 활성화
-            // setResultPage(<ErrorForm></ErrorForm>)
-            // setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
+            setResultPage(<ErrorForm></ErrorForm>)
+            setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
             console.log(err);
         })
     }
@@ -55,7 +59,7 @@ const Main = () => {
         <div>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div className="container px-4 px-lg-5">
-                <a className="navbar-brand" href="#page-top">Cafe-In</a>
+                <a className="navbar-brand cafe24suk" href="#page-top"><i>Cafe-In</i></a>
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto my-2 my-lg-0">
@@ -88,9 +92,9 @@ const Main = () => {
             <div className="container px-4 px-lg-5">
                 <div className="row gx-4 gx-lg-5 justify-content-center">
                     <div className="col-lg-8 text-center">
-                        <h2 className="text-white mt-0">카페인 추천 시스템에 관해서</h2>
+                        <h2 className="text-white mt-0">카페-인 추천 시스템에 관해서</h2>
                         <hr className="divider divider-light" />
-                        <p className="text-white-75 mb-4">카페인 모델은 이미지 기반 추천 시스템입니다.<br />사용자의 이미지의 분위기를 분류하는 모델과 이미지에 맞는 리뷰를 생성하는 모델을 통과해 예측에 사용합니다.<br/> 이미지 추가 예정 </p>
+                        <p className="text-white-75 mb-4">카페-인 모델은 이미지 기반 추천 시스템입니다.<br />사용자의 이미지의 분위기를 분류하는 모델과 이미지에 맞는 리뷰를 생성하는 모델을 통과해 예측에 사용합니다.<br/> 이미지 추가 예정 </p>
                     </div>
                 </div>
             </div>
@@ -212,7 +216,7 @@ const Main = () => {
         </section>
 
         <footer className="bg-light py-5">
-            <div className="container px-4 px-lg-5"><div className="small text-center text-muted">2021 12회 투빅스 컨퍼런스</div><br /><div className="small text-center text-muted"><a target="_blank" href="https://icons8.com/icon/eZLBUovU50qY/coffee">Coffee</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a></div></div>
+            <div className="container px-4 px-lg-5"><div className="small text-center text-muted">2021 12회 투빅스 컨퍼런스</div><br /><div className="small text-center text-muted">Notion, Github icon by <a target="_blank" href="https://icons8.com">Icons8</a></div></div>
         </footer>
 
     </div>
