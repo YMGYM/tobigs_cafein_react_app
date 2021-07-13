@@ -14,6 +14,8 @@ const Main = () => {
     const [resultPage, setResultPage] = useState(null);
 
 
+    let formData = new FormData();
+
 
     const handleChange = (e) => {
         console.log("image detected.");
@@ -33,18 +35,22 @@ const Main = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('submitted');
+        formData.append('img', img);
 
-        const sendImg = img;
         setResultPage(<SubmitForm></SubmitForm>)
         setButton(<div className="d-grid"><button className="btn btn-primary disabled btn-xl" id="submitButton" type="submit">테스트!</button></div>);
 
-        axios.get('https://tobigs-cafein-nmvx.run.goorm.io/main/status', sendImg).then(res=> {
+        axios.post('https://tobigs-cafein-nmvx.run.goorm.io/main/result', formData, {}).then(res=> {
             // 성공시 제출 버튼 활성화 후 결과 표시
             setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
-            setResultPage(<SuccessForm></SuccessForm>)
-            console.log(res.data.status);
+            console.log('Inference Done');
+            console.log(res.data);
+
+            setResultPage(<SuccessForm cafes={res.data.value}></SuccessForm>)
 
         }).catch(err=> {
+            console.log(formData);
+
             // 오류창 표시 후 제출 버튼 활성화
             setResultPage(<ErrorForm></ErrorForm>)
             setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
@@ -198,7 +204,7 @@ const Main = () => {
                 </div>
                 <div className="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div className="col-lg-6">
-                        <form id="demoForm" onSubmit={handleSubmit}>
+                        <form id="demoForm" onSubmit={handleSubmit} encType="multipart/form-data">
     
                             <div className='container'>
                               <input className="form-control form-control-lg form-floating"  onChange={handleChange} id="formFile" type="file" />
