@@ -55,7 +55,7 @@ const Main = () => {
         <div>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div className="container px-4 px-lg-5">
-                <a className="navbar-brand" href="#page-top">CafeIn</a>
+                <a className="navbar-brand" href="#page-top"><img width='100' src='logo_nav_black.png' /></a>
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav ms-auto my-2 my-lg-0">
@@ -72,7 +72,8 @@ const Main = () => {
             <div className="container px-4 px-lg-5 h-100">
                 <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div className="col-lg-8 align-self-end">
-                        <h1 className="text-white font-weight-bold">Tobigs CafeIn</h1>
+                        {/* <h1 className="text-white font-weight-bold">Tobigs CafeIn</h1> */}
+                        <img src='logo_big_white.png' />
                         <hr className="divider" />
                     </div>
                     <div className="col-lg-8 align-self-baseline">
