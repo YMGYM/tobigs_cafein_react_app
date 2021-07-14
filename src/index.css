@@ -11068,3 +11068,8 @@ header.masthead h1, header.masthead .h1 {
   font-weight: normal;
   font-style: normal;
 }
+
+.resultImg {
+  width: 200px;
+  height: 200px;
+}
