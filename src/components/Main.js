@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import axios from 'axios';
 import SubmitForm from './SubmitForm';
 import SuccessForm from './SuccessForm';
@@ -12,6 +12,7 @@ const Main = () => {
     const [img, setImg] = useState(null);
     const [button, setButton] = useState(<div className="d-grid"><button className="btn btn-primary disabled btn-xl" id="submitButton" type="submit">테스트!</button></div>);
     const [resultPage, setResultPage] = useState(null);
+    const [imgUrl, setImgUrl] = useState(null);
 
 
     let formData = new FormData();
@@ -22,7 +23,8 @@ const Main = () => {
         console.log(e.target.files[0]);
 
         setImg(e.target.files[0]);
-        
+        setImgUrl(URL.createObjectURL(e.target.files[0]));
+
         if(typeof(e.target.files[0]) !== 'undefined'){
             setButton(<div className="d-grid"><button className="btn btn-primary btn-xl" id="submitButton" type="submit">테스트!</button></div>);
         }
@@ -46,7 +48,7 @@ const Main = () => {
             console.log('Inference Done');
             console.log(res.data);
 
-            setResultPage(<SuccessForm cafes={res.data.value}></SuccessForm>)
+            setResultPage(<SuccessForm query={imgUrl} cafes={res.data.value}></SuccessForm>)
 
         }).catch(err=> {
             console.log(formData);
@@ -82,7 +84,6 @@ const Main = () => {
             <div className="container px-4 px-lg-5 h-100">
                 <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div className="col-lg-8 align-self-end">
-                        {/* <h1 className="text-white font-weight-bold">Tobigs CafeIn</h1> */}
                         <img className='img-fluid' src='logo_big_white.png' />
                         <hr className="divider" />
                     </div>
@@ -100,7 +101,9 @@ const Main = () => {
                     <div className="col-lg-8 text-center">
                         <h2 className="text-white mt-0">카페-인 추천 시스템에 관해서</h2>
                         <hr className="divider divider-light" />
-                        <p className="text-white-75 mb-4">카페-인 모델은 이미지 기반 추천 시스템입니다.<br />사용자의 이미지의 분위기를 분류하는 모델과 이미지에 맞는 리뷰를 생성하는 모델을 통과해 예측에 사용합니다.<br/> 이미지 추가 예정 </p>
+                        <img className='img-fluid' src="cafe-in_info.png" />
+                        <p className="text-white-75 mb-4">카페-인 모델은 이미지 기반 추천 시스템입니다.<br />사용자의 이미지의 분위기와 이미지에 맞는 리뷰를 고려하여 가장 잘 어울리는 카페를 추천해 주는 모델입니다.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -137,7 +140,7 @@ const Main = () => {
                         <div className="mt-5">
                             <img className='profileImg' src='https://avatars.githubusercontent.com/u/63541608?s=200&v=4' />
                             <h3 className="h4 mb-2">한유진</h3>
-                            <p className="text-muted mb-0">잠은 잘 수가 없어요</p>
+                            <p className="text-muted mb-0">커피 한잔할래요옹( ͡° ͜ʖ ͡°)</p>
                         </div>
                     </div>
                 </div>
@@ -146,30 +149,30 @@ const Main = () => {
                 <div className="row gx-4 gx-lg-5">
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://avatars.githubusercontent.com/u/63541608?s=200&v=4' />
+                            <img className='profileImg' src='profiles/강지우.jpeg' />
                             <h3 className="h4 mb-2">강지우</h3>
-                            <p className="text-muted mb-0">한참 뒤에 별빛이 내리면</p>
+                            <p className="text-muted mb-0">컨바(컨퍼 바이)~~~~~~</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
                             <img className='profileImg' src='https://avatars.githubusercontent.com/u/63541608?s=200&v=4' />
                             <h3 className="h4 mb-2">김현지</h3>
-                            <p className="text-muted mb-0">난 다시 잠들 순 없겠죠</p>
+                            <p className="text-muted mb-0">철이 없었죠... 커피가 좋아서 카페 추천시스템을 만들었다는게</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://scontent-ssn1-1.xx.fbcdn.net/v/t1.6435-9/122186002_2805390756346422_7766817196706331709_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=PvKN57ik_joAX9QvLaq&tn=sYEfSPsGgEQr3EOd&_nc_ht=scontent-ssn1-1.xx&oh=54137345d79850534136f067528b7d08&oe=60EEC49F' />
+                            <img className='profileImg' src='profiles/안민준.jpeg' />
                             <h3 className="h4 mb-2">안민준</h3>
-                            <p className="text-muted mb-0">지나간 새벽을 다새면</p>
+                            <p className="text-muted mb-0">커피를 너무 많이 마셨나봐요🎶 심장이 막 두근대고 잠은 잘 수가 없어요🎶</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
                             <img className='profileImg' src='https://avatars.githubusercontent.com/u/69336270?v=4' />
                             <h3 className="h4 mb-2">이윤정</h3>
-                            <p className="text-muted mb-0">다시 네 곁에 잠들겠죠</p>
+                            <p className="text-muted mb-0">커피는 낮에 땡기고, 술은 밤에 땡긴다. 🍻</p>
                         </div>
                     </div>
                 </div>
