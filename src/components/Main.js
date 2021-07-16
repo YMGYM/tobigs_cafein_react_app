@@ -131,7 +131,7 @@ const Main = () => {
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' alt="member_profile" src='profiles/박준영.jpeg' />
+                            <img className='profileImg' alt="member_profile" src='profiles/이원도.jpeg' />
                             <h3 className="h4 mb-2">이원도</h3>
                             <p className="text-muted mb-0">여전히 인문학은 죽지 않아</p>
                         </div>
