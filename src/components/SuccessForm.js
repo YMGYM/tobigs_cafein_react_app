@@ -12,7 +12,7 @@ const SuccessForm = (props) => {
                         <h2 className="mt-0">결과</h2>
                         <hr className="divider divider-primary" />
                         <h4 className="mt-0">입력 이미지</h4>
-                        <img className="resultImg" src={props.query} />
+                        <img className="resultImg" alt="userInputImage" src={props.query} />
                         <hr className="divider divider-primary" />
                         <p className="mb-4">당신에게 추천하는 카페 목록은..</p>
                         {props.cafes.map((value, index) => {

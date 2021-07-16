@@ -84,7 +84,7 @@ const Main = () => {
             <div className="container px-4 px-lg-5 h-100">
                 <div className="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div className="col-lg-8 align-self-end">
-                        <img className='img-fluid' src='logo_big_white.png' />
+                        <img className='img-fluid' alt="cafeIn logo" src='logo_big_white.png' />
                         <hr className="divider" />
                     </div>
                     <div className="col-lg-8 align-self-baseline">
@@ -101,8 +101,8 @@ const Main = () => {
                     <div className="col-lg-8 text-center">
                         <h2 className="text-white mt-0">카페-인 추천 시스템에 관해서</h2>
                         <hr className="divider divider-light" />
-                        <img className='img-fluid' src="cafe-in_info.png" />
-                        <p className="text-white-75 mb-4">카페-인 모델은 이미지 기반 추천 시스템입니다.<br />사용자의 이미지의 분위기와 이미지에 맞는 리뷰를 고려하여 가장 잘 어울리는 카페를 추천해 주는 모델입니다.</p>
+                        <img className='img-fluid' alt="cafeIn_logo" src="cafe-in_info.png" />
+                        <p className="text-white-75 mb-4">카페-인 모델은 이미지 기반 카페 추천 시스템입니다.<br />사용자의 이미지에서 분위기 태그를 유추하고 이미지에 맞는 리뷰를 추측하여 가장 잘 어울리는 카페를 추천해 주는 모델입니다.</p>
                         
                     </div>
                 </div>
@@ -117,28 +117,28 @@ const Main = () => {
                 <div className="row gx-4 gx-lg-5">
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://avatars.githubusercontent.com/u/67720742?v=4' />
+                            <img className='profileImg' alt="member_profile" src='profiles/강재영.jpeg' />
                             <h3 className="h4 mb-2">강재영</h3>
-                            <p className="text-muted mb-0">커피를 너무</p>
+                            <p className="text-muted mb-0">아이러브커피</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://avatars.githubusercontent.com/u/63541608?s=200&v=4' />
+                            <img className='profileImg' alt="member_profile" src='profiles/박준영.jpeg' />
                             <h3 className="h4 mb-2">박준영</h3>
-                            <p className="text-muted mb-0">많이 마셨나봐요</p>
+                            <p className="text-muted mb-0">"라떼"는 말이야~</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://avatars.githubusercontent.com/u/63541608?s=200&v=4' />
+                            <img className='profileImg' alt="member_profile" src='profiles/박준영.jpeg' />
                             <h3 className="h4 mb-2">이원도</h3>
-                            <p className="text-muted mb-0">심장이 막 두근대고</p>
+                            <p className="text-muted mb-0">여전히 인문학은 죽지 않아</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://avatars.githubusercontent.com/u/63541608?s=200&v=4' />
+                            <img className='profileImg' alt="member_profile" src='profiles/한유진.jpeg' />
                             <h3 className="h4 mb-2">한유진</h3>
                             <p className="text-muted mb-0">커피 한잔할래요옹( ͡° ͜ʖ ͡°)</p>
                         </div>
@@ -149,28 +149,28 @@ const Main = () => {
                 <div className="row gx-4 gx-lg-5">
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='profiles/강지우.jpeg' />
+                            <img className='profileImg' alt="member_profile" src='profiles/강지우.jpeg' />
                             <h3 className="h4 mb-2">강지우</h3>
                             <p className="text-muted mb-0">컨바(컨퍼 바이)~~~~~~</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://avatars.githubusercontent.com/u/63541608?s=200&v=4' />
+                            <img className='profileImg' alt="member_profile" src='profiles/김현지.jpeg' />
                             <h3 className="h4 mb-2">김현지</h3>
                             <p className="text-muted mb-0">철이 없었죠... 커피가 좋아서 카페 추천시스템을 만들었다는게</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='profiles/안민준.jpeg' />
+                            <img className='profileImg' alt="member_profile" src='profiles/안민준.jpeg' />
                             <h3 className="h4 mb-2">안민준</h3>
                             <p className="text-muted mb-0">커피를 너무 많이 마셨나봐요🎶 심장이 막 두근대고 잠은 잘 수가 없어요🎶</p>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-6 text-center">
                         <div className="mt-5">
-                            <img className='profileImg' src='https://avatars.githubusercontent.com/u/69336270?v=4' />
+                            <img className='profileImg' alt="member_profile" src='profiles/이윤정.jpeg' />
                             <h3 className="h4 mb-2">이윤정</h3>
                             <p className="text-muted mb-0">커피는 낮에 땡기고, 술은 밤에 땡긴다. 🍻</p>
                         </div>
@@ -184,11 +184,8 @@ const Main = () => {
             <div className="container px-4 px-lg-5 text-center">
                 <h2 className="mb-4">자세한 정보는 아래 링크에서 확인하세요</h2>
                 <div className='row'>
-                    <div className='col-6'>
-                        <a href='https://github.com/stillpsy/recsys_cafe'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" /></a>
-                    </div>
-                    <div className='col-6'>
-                        <a href='https://www.notion.so/12-9f8f3661b92b403cb21cc531f0e777a9'><img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/notion.svg" /></a>
+                    <div className='col-12'>
+                        <a href='https://github.com/stillpsy/recsys_cafe'><img height="60" width="60" alt="github" src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/github.svg" /> </a>
                     </div>
                     
                 </div>
@@ -225,7 +222,7 @@ const Main = () => {
         </section>
 
         <footer className="bg-light py-5">
-            <div className="container px-4 px-lg-5"><div className="small text-center text-muted">2021 12회 투빅스 컨퍼런스</div><br /><div className="small text-center text-muted">Notion, Github icon by <a target="_blank" href="https://icons8.com">Icons8</a></div></div>
+            <div className="container px-4 px-lg-5"><div className="small text-center text-muted">2021 12회 투빅스 컨퍼런스</div><br /><div className="small text-center text-muted">Notion, Github icon by <a target="_blank" rel="noreferrer" href="https://icons8.com">Icons8</a></div></div>
         </footer>
 
     </div>
